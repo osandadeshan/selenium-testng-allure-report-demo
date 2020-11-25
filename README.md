@@ -3,10 +3,10 @@
 This is a demo project for Selenium Page Object Model with Allure reporting.
 
 ### Pre-requisites
-Java
-Maven
-[Allure](https://docs.qameta.io/allure/#_installing_a_commandline)
-IntelliJ IDEA
+* Java
+* Maven
+* [Allure](https://docs.qameta.io/allure/#_installing_a_commandline)
+* IntelliJ IDEA
 
 ### Steps
 1. Clone this project
