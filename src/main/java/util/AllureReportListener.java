@@ -14,12 +14,7 @@ public class AllureReportListener implements ITestListener {
 
     @Attachment(value = "Page screenshot", type = "image/png")
     public byte[] saveScreenshotPNG (WebDriver driver) {
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-    }
-
-    @Attachment(value = "{0}", type = "text/plain")
-    public static String saveTextLog (String message) {
-        return message;
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @Override
@@ -46,12 +41,10 @@ public class AllureReportListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println("Test Method '" + getTestMethodName(iTestResult) + "' is Failed");
-        WebDriver driver = getDriver();
-        if (driver instanceof WebDriver) {
+        if (getDriver() != null) {
             System.out.println("Screenshot has captured for the Test Method '" + getTestMethodName(iTestResult) + "'");
-            saveScreenshotPNG(driver);
+            saveScreenshotPNG(getDriver());
         }
-        saveTextLog("Test Method '" + getTestMethodName(iTestResult) + "' is failed and screenshot taken");
     }
 
     @Override
